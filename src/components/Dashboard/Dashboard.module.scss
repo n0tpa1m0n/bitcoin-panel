@@ -1,0 +1,146 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.dashboardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  animation: slideIn 0.5s ease forwards;
+
+  h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -0.025em;
+  }
+}
+
+.addButton {
+  background: var(--accent-gradient);
+  color: white;
+  font-weight: 600;
+  padding: 0.875rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+  animation: fadeIn 0.6s ease forwards;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  h3 {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.025em;
+  }
+
+  p {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+.blockGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+  .dashboard {
+    padding: 1.5rem;
+  }
+
+  .blockGrid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .dashboardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .blockGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard {
+    padding: 0.75rem;
+  }
+
+  .statCard {
+    padding: 1.25rem;
+
+    p {
+      font-size: 1.75rem;
+    }
+  }
+}

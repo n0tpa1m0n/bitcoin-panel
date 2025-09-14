@@ -1,0 +1,111 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalContent {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.closeButton {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+    opacity: 0.7;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroup {
+    margin-bottom: 1.5rem;
+
+    label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: var(--text-color);
+    }
+
+    input,
+    select {
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 1rem;
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+        background-color: var(--card-bg);
+        color: var(--text-color);
+
+        &:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+    }
+}
+
+.formActions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+
+    button {
+        flex: 1;
+        padding: 0.8rem;
+        font-weight: 500;
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+}
+
+.submitButton {
+    background-color: var(--success-color);
+    color: white;
+    border: none;
+
+    &:hover {
+        background-color: #388e3c;
+    }
+}
+
+.cancelButton {
+    background-color: var(--error-color);
+    color: white;
+    border: none;
+
+    &:hover {
+        background-color: #d32f2f;
+    }
+}
